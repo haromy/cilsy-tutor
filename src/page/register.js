@@ -5,33 +5,59 @@ import {
   Col,
   Form,
 } from 'react-bootstrap';
+import InputComponent from '../components/inputComponent';
 
 // function component
 const Register = (props) => {
   const { data, history } = props;
-  const [username, setUsername] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
 
   return(
     <Container
     style={{ backgroundColor: '#efefef', borderWidth: 1, marginTop: 10, padding: 10}}
     >
-      <Row>
-        <Col>Page Register (menggunakan funtion)</Col>
-      </Row>
-        <Form.Group as={Row} controlId="formPlaintextEmail">
-          <Form.Label column sm="2">
-            Username
-          </Form.Label>
-          <Col sm="10">
-            <Form.Control
-              value={username}
-              placeholder="Masukkan username"
-              onChange={(val) => setUsername(val.target.value) }
+        <div style={{ backgroundColor: '#ededed', padding: 10 }}>
+          <div>SIGN UP FOR FREE</div>
+          <Row>
+            <Col>
+              <InputComponent
+                value={firstName}
+                placeholder="First Name"
+                onChange={(val) => setFirstName(val)}
+              />
+            </Col>
+            <Col>
+              <InputComponent
+                value={lastName}
+                placeholder="last Name"
+                onChange={(val) => setLastName(val)}
+              />
+            </Col>
+          </Row>
+          <Form>
+            <InputComponent
+              value={email}
+              placeholder="Your email"
+              onChange={(val) => setEmail(val)}
             />
-          </Col>
-        </Form.Group>
-        <div>nama : {username}</div>
+            <InputComponent
+              value={phone}
+              placeholder="Your Phone"
+              onChange={(val) => setPhone()}
+            />
+            <InputComponent
+              value={password}
+              placeholder="Password"
+              onChange={(val) => {
+                setPassword(val);
+              }}
+            />
+          </Form>
+        </div>
     </Container>
   );
 };

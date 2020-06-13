@@ -4,13 +4,25 @@ import {
 } from 'react-bootstrap';
 
 const PageWithParams = (props) => {
-  console.log(props);
+  // destructure props
+  const { match, location } = props;
+
+  // destructure params
   const {
-    match
-  } = props;
+    params
+  } = match;
+
+  // destructure location
+  const {
+    state
+  } = location;
+
   return (
     <Container>
-      <div>{match.params.nama}</div>
+      <div>{params.nama}</div>
+      <div>Nama buah : {state && state.nama}</div>
+      <div>Total : {state && state.total}</div>
+      <div>harga : {state && state.harga}</div>
     </Container>
   );
 }

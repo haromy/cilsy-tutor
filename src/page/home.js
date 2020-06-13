@@ -19,7 +19,6 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    console.log('fired');
     axios({
       method: 'GET',
       url: 'https://pokeapi.co/api/v2/pokemon/?limit=20&offset=20'
@@ -36,7 +35,6 @@ class Home extends Component {
     const {
       listPokemon
     } = this.state;
-    console.log(listPokemon)
     return (
       <Container>
         <div>Home page</div>
@@ -70,7 +68,16 @@ class Home extends Component {
             </Link>
           </Col>
           <Col md={4} lg={4}>
-            <Link to='/product/ini-product-mangga'>
+            <Link
+              to={{
+                pathname: '/product/ini-product-mangga',
+                state: {
+                  nama: 'Mangga',
+                  total: 5,
+                  harga: 10.000
+                }
+              }}
+            >
               <Button>
                 param ini-product-mangga
               </Button>
@@ -94,16 +101,18 @@ class Home extends Component {
             </Link>
           </Col>
         </Row>
-        <Row>
+        <Row style={{ backgroundColor: '#e6e6e6' }}>
           {
             listPokemon && listPokemon.map((el, index) => {
               return (
-                <Col md={4} lg={4} key={index} style={{ margin: 5 }}>
-                  <Link to={`/pokemon-detail/${el.name}`}>
-                    <Button>
-                      pokemon {el.name}
-                    </Button>
-                  </Link>
+                <Col md={4} lg={4} key={index}>
+                  <div style={{ margin: 5 }}>
+                    <Link to={`/pokemon-detail/${el.name}`}>
+                      <Button>
+                        pokemon {el.name}
+                      </Button>
+                    </Link>
+                  </div>
                 </Col>
               )
             })

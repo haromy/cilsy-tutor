@@ -3,16 +3,18 @@ import {
   Container,
   Button,
   Form,
+  Row,
+  Col,
 } from 'react-bootstrap';
 import InputClass from '../components/inputClass';
-import InputComponent from '../components/inputComponent';
+// import InputComponent from '../components/inputComponent';
 
 class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
-      password: ''
+      firstName: '',
+      password: '',
     }
   }
   render() {
@@ -20,8 +22,8 @@ class Login extends Component {
       history
     } = this.props;
     const {
-      username,
-      password
+      firstName,
+      password,
     } = this.state;
     return(
       <Container>
@@ -36,9 +38,9 @@ class Login extends Component {
           <Form>
             <InputClass
               label="Username"
-              value={username}
+              value={firstName}
               placeholder="Masukkan username"
-              onChange={(val) => this.setState({ username: val })}
+              onChange={(val) => this.setState({ firstName: val })}
             />
             <InputClass
               label="Password"
@@ -47,26 +49,7 @@ class Login extends Component {
               onChange={(val) => this.setState({ password: val })}
             />
           </Form>
-          <div>username : {username}</div>
-          <div>password : {password}</div>
-        </div>
-        <div style={{ backgroundColor: '#ededed', padding: 10 }}>
-          <div>Child component dengan function</div>
-          <Form>
-            <InputComponent
-              label="Username"
-              value={username}
-              placeholder="Masukkan username"
-              onChange={(val) => this.setState({ username: val })}
-            />
-            <InputComponent
-              label="Password"
-              value={password}
-              placeholder="Masukkan password"
-              onChange={(val) => this.setState({ password: val })}
-            />
-          </Form>
-          <div>username : {username}</div>
+          <div>username : {firstName}</div>
           <div>password : {password}</div>
         </div>
       </Container>
