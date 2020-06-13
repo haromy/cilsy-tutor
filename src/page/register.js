@@ -18,9 +18,9 @@ const Register = (props) => {
 
   return(
     <Container
-    style={{ backgroundColor: '#efefef', borderWidth: 1, marginTop: 10, padding: 10}}
+    style={{marginTop: 10, padding: 10}}
     >
-        <div style={{ backgroundColor: '#ededed', padding: 10 }}>
+        <div className="signup-form">
           <div>SIGN UP FOR FREE</div>
           <Row>
             <Col>

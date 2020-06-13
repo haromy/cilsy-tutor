@@ -38,3 +38,9 @@
 .mr-5 {
   margin-right: 5px;
 }
+
+.signup-form {
+  background-color: #ededed;
+  border: 1px solid red;
+  padding: 10px;
+}
