@@ -35,15 +35,7 @@ const PokemonDetail = (props) => {
 
   return (
     <Container>
-      <Button
-        onClick={() => history.goBack()}
-      >
-        Back
-      </Button>
-      <div>nama pokemon: {nama}</div>
-      <div>baseExperience: {baseExperience}</div>
-      <div>gambar:</div>
-      <img style={{ width: 200, height: 'auto', borderWidth: 1}} alt="bendera" src={image} />
+      <p>test</p>
     </Container>
   );
 }
