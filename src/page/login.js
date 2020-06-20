@@ -27,7 +27,7 @@ class Login extends Component {
     } = this.state;
     return(
       <Container>
-        <div>page login</div>
+        <div>page login 2 aja login lagi</div>
         <Button
           onClick={() => history.goBack()}
         >
