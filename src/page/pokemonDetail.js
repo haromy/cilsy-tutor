@@ -35,7 +35,7 @@ const PokemonDetail = (props) => {
 
   return (
     <Container>
-      <p>test</p>
+     <h1>Test</h1>
     </Container>
   );
 }
